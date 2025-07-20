@@ -29,25 +29,34 @@ The challenge aims to:
 ---
 
 ## **3. Theoretical Background**
-
 ### **3.1 Galton Box and Monte Carlo Analogy**
+Classical Galton Box: A ball drops through multiple layers of pegs, bouncing left or right randomly, forming a binomial (Gaussian) distribution.
 
-* **Classical Galton Box:** A ball drops through several layers of pegs, randomly bouncing left or right, forming a **binomial distribution** that approximates a Gaussian as layers increase.
-* **Monte Carlo Relevance:** Such random sampling techniques are key to **particle transport models** and **PDE solutions** in high dimensions.
+Monte Carlo Relevance: This is analogous to simulating random trajectories in particle transport, traffic flow, or diffusion processes.
 
 ### **3.2 Quantum Galton Box**
+A quantum circuit simulates this process by:
 
-A **quantum circuit** simulates this process by placing qubits in **superposition**, where each qubit represents a branching decision (left or right). The final measurement of all qubits reveals the distribution of outcomes.
+Initializing qubits in the |0⟩ state.
 
-* **Gaussian Distribution:** Achieved using **Hadamard gates** at each layer, which give equal probabilities for left/right paths, mimicking unbiased random walks.
-* **Exponential Distribution:** Implemented by replacing Hadamards with **biased rotations** (`RY(θ)`), creating a non-uniform branching probability.
-* **Hadamard Quantum Walk:** Alternating **Hadamard gates** and **controlled swaps** produce interference patterns characteristic of quantum walks.
+Applying Hadamard gates to place qubits in superposition, representing left/right branching decisions.
 
-### **3.3 Quantum Advantage**
+Measuring qubits to produce a histogram of outcomes.
 
-* **Parallel Trajectory Evaluation:** Superposition allows evaluation of all possible paths simultaneously.
-* **Interference Control:** Phase shifts can bias probabilities in ways difficult to achieve classically.
-* **Potential Exponential Speed-Up:** Particularly relevant when extended to high-dimensional problems or integrated with QFT-based sampling.
+Gaussian Distribution: Produced by unbiased Hadamards.
+
+Exponential Distribution: Achieved with biased rotations (RY(θ)).
+
+Quantum Walk: Alternating Hadamards and controlled SWAPs introduce interference.
+
+### **3.3 Traffic Flow Modeling Analogy**
+Traffic movement in complex road networks can be viewed as particles (cars) traveling through probabilistic paths:
+
+Each layer in the Galton Box corresponds to a decision point (e.g., intersection or lane choice).
+
+Biased rotations simulate traffic congestion or preferred routes (e.g., higher probability of staying on a major highway).
+
+Quantum Parallelism: Enables simultaneous evaluation of all traffic flow patterns, making it valuable for real-time congestion prediction and traffic optimization.
 
 ---
 
